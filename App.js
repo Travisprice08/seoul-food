@@ -1,4 +1,5 @@
 import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 import { 
   Dimensions,
   StyleSheet, 
@@ -14,12 +15,21 @@ import { useDimensions, useDeviceOrientation } from "@react-native-community/hoo
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import MainScreen from "./app/screens/MainScreen";
 
-export default function App() {
+// export default function App() {
 
+//   return (
+//     // <WelcomeScreen />
+//     <MainScreen />
+//   );
+// }
+
+const App = () => {
   return (
-    <WelcomeScreen />
-    // <MainScreen />
-  );
+    <NavigationContainer>
+      <WelcomeScreen />
+      <MainScreen />
+    </NavigationContainer>
+  )
 }
 
-
+export default App;
