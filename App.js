@@ -1,5 +1,6 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { 
   Dimensions,
   StyleSheet, 
@@ -23,11 +24,20 @@ import MainScreen from "./app/screens/MainScreen";
 //   );
 // }
 
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   return (
     <NavigationContainer>
-      <WelcomeScreen />
-      <MainScreen />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          />
+          <Stack.Screen name="Main" component={MainScreen} />
+      </Stack.Navigator>
+      {/* <WelcomeScreen />
+      <MainScreen /> */}
     </NavigationContainer>
   )
 }

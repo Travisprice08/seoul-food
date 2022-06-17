@@ -1,7 +1,8 @@
 import React from 'react';
-import { ImageBackground, StyleSheet,Text, View } from 'react-native';
+import { Button, ImageBackground, StyleSheet,Text, View } from 'react-native';
 
-function WelcomeScreen(props) {
+// function WelcomeScreen(props) {
+    const WelcomeScreen = ({ navigation }) => {
     return (
         <ImageBackground
         style = {styles.background}
@@ -9,10 +10,20 @@ function WelcomeScreen(props) {
         source={require("../assets/mom.jpg")}
         >
             <Text style = {styles.intro}>Welcome to Mom's Kitchen</Text>
-            <View style={styles.enterButton}></View>
+            <Button
+                style={styles.enterButton}
+                title="Lets cook some shit!"
+                onPress={() =>
+                    navigation.navigate('Main')}/>
+            {/* <View style={styles.enterButton}></View> */}
         </ImageBackground>
     );
-}
+    };
+// }
+
+    // const MainScreen = ({ navigation, route }) => {
+    //     return <Text> Try not to fuck this up!</Text>;
+    // };
 
 const styles = StyleSheet.create({
     background: {
