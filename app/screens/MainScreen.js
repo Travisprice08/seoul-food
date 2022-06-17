@@ -21,7 +21,7 @@ import { Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react
                     {/* <View style={styles.recipe}></View> */}
                 <View 
                     style={styles.desContainer}>
-                    <Text style={styles.descText}>Despite what some may think, Kimchi soup is not JUST kimchi and water, Joe.</Text>
+                    <Text style={styles.descText}>Despite what some may think, Kimchi soup is not JUST kimchi and water, Joe 👀.</Text>
                 </View>
                 </View>
             </ImageBackground>
@@ -51,8 +51,7 @@ const styles = StyleSheet.create ({
     },
     desContainer: {
         flex: 0.5,
-        backgroundColor: 'white',
-        opacity: 0.7,
+        backgroundColor: 'rgba(0,0,0,0.7)',
         position: 'absolute',
         borderRadius: 5,
         top: 380,
@@ -64,6 +63,7 @@ const styles = StyleSheet.create ({
         // alignItems: 'center',
     },
     descText: {
+        color: 'white',
         top: 15,
         left: 75,
         fontSize: 15,
