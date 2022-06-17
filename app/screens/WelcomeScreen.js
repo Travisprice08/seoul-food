@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 
-// function WelcomeScreen(props) {
     const WelcomeScreen = ({ navigation }) => {
     return (
         <ImageBackground
@@ -21,10 +20,6 @@ import { Button, ImageBackground, Pressable, StyleSheet, Text, View } from 'reac
     );
     };
 // }
-
-    // const MainScreen = ({ navigation, route }) => {
-    //     return <Text> Try not to fuck this up!</Text>;
-    // };
 
 const styles = StyleSheet.create({
     background: {

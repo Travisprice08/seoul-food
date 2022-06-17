@@ -1,22 +1,28 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 
-function MainScreen(props) {
+    const MainScreen = ({ navigation }) => {
     return (
         <ImageBackground
             style={styles.background}
             resizeMode='cover'
             source={require("../assets/korea.jpg")}>
-                <View style={styles.iconContainer}>
-                    <View style={styles.backIcon}>
+                <Pressable 
+                    style={styles.backIcon}
+                    onPress={() =>
+                        navigation.navigate('Welcome')}>
                         <Text style={styles.buttonText}>Home</Text>
-                    </View>
-                </View>
+                </Pressable>
                 <View style={styles.recipeContainer}>
                     <Image 
                     style={styles.image}
                     source={require('../assets/kimchiJjigae.jpeg')}></Image>
                     {/* <View style={styles.recipe}></View> */}
+                <View 
+                    style={styles.desContainer}>
+                    <Text style={styles.descText}>Despite what some may think, Kimchi soup is not JUST kimchi and water, Joe.</Text>
+                </View>
                 </View>
             </ImageBackground>
     );
@@ -25,13 +31,16 @@ function MainScreen(props) {
 const styles = StyleSheet.create ({
     background: {
         flex: 1,
-        // alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center'
     },
     backIcon: {
         width: 100,
         height: 50,
         backgroundColor: 'crimson',
         borderRadius: 10,
+        left: '85%',
+        top: 15,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -40,21 +49,37 @@ const styles = StyleSheet.create ({
         // position: 'absolute',
         // top: '50%',
     },
-    iconContainer: {
+    desContainer: {
+        flex: 0.5,
+        backgroundColor: 'white',
+        opacity: 0.7,
         position: 'absolute',
-        top: 20,
-        right: 30,
+        borderRadius: 5,
+        top: 380,
+        left: 20,
+        height: 500,
+        width: '95%',
+
+        // justifyContent: 'center',
+        // alignItems: 'center',
+    },
+    descText: {
+        top: 15,
+        left: 75,
+        fontSize: 15,
+        fontWeight: '700',
     },
     image: {
+        flex: 0.5,
         position: 'absolute',
-        top: 80,
-        left: 30,
-        width: '30%',
-        height: '30%',
+        top: 30,
+        left: 20,
+        width: '95%',
+        height: '70%',
         borderRadius: 5,
     },
     recipeContainer: {
-        flex: 1,
+        flex: 0.5,
         width: '100%',
         color: 'white',
     },
